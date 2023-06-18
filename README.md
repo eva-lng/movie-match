@@ -12,3 +12,4 @@ planned future optimizations include:
 + Improve the layout of the trending and recommendations section. Currently, when the viewport is resized to a smaller width, the movie images wrap onto multiple lines, which can make the app appear cluttered. To enhance the overall layout, it would be beneficial to incorporate a multiple-item carousel in these sections. By implementing a one-line carousel, the movie images can be neatly organized and prevent clutter, resulting in an improved visual presentation.
 
 ## Lessons Learned:
+The goal of this project was to practice utilising external APIs and async functions and how to implement them using DOM manipulation
