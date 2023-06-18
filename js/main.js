@@ -1,4 +1,3 @@
-import API_KEY from './config.js';
 let movieID;
 const imgURL = 'https://image.tmdb.org/t/p/w300';
 const movieInfoSection = document.querySelector('#movie-info');
@@ -34,7 +33,7 @@ function getTrend() {
 //get ID of searched title
 function getID() {
     const input = document.querySelector('input').value
-    const url = `http://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${input}`
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${input}`
 
     fetch(url)
     .then(res => res.json()) //parse response as JSON
