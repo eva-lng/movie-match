@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="This is where your description goes">
+    	<meta name="keywords" content="one, two, three">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Movie Recommendation App</title>
+
+		<!-- external CSS links -->
+		<!-- <link rel="stylesheet" href="css/normalize.css"> -->
+		<link rel="stylesheet" href="css/style.css">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/5d7bb29ba5.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<header class="flex">
+            <div class="title flex">
+                <h1>Movie Match</h1>
+                <span>Find your next movie to watch</span>
+                <div class="search-container">
+                    <input id="user-inp" type="text" placeholder="Enter a movie title" value=""><button id="search-btn">Get Recommendation</button>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="popular">
+                <h2>Trending Today</h2>
+                <div id="trending" class="flex"></div>
+            </section>
+    
+            <section id="movie-info" class="movie-info flex hidden">
+                <div id="info-img"></div>
+                <div id="info-text" class="flex"></div>
+            </section>
+    
+            <section class="movie-rec hidden">
+                <h2 id="movie-rec-title"></h2>
+                <div id="rec-results" class="flex"></div>
+            </section>
+        </main>
+
+        <footer class="flex">
+			<section class="logo">
+				<a href="#"><i class="fa-brands fa-github"></i></a>
+				&nbsp;
+				<span>Movie Match</span>
+				&nbsp;
+				<span>2023</span>
+			</section>
+			<section class="credits">
+				<p>Background Image by <a href="https://unsplash.com/@felixmooneeram">Felix Mooneeram</a></p>
+				<p>Data from the <a href="https://developer.themoviedb.org/docs">The Movie Database</a></p>
+			</section>
+		</footer>
+
+		<script type="text/javascript" src="main.js"></script>
+	</body>
+</html>

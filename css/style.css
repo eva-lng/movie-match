@@ -1,0 +1,307 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Abel', sans-serif;
+}
+body {
+    color: white;
+    font-family: 'Roboto Flex', sans-serif;
+    height: 100vh;
+    background: black;
+}
+img {
+    display: block;
+    border-radius: 5px;
+}
+li {
+    list-style: none;
+}
+.flex {
+    display: flex;
+}
+h2 {
+    text-transform: uppercase;
+}
+a, a:link, a:visited {
+    text-decoration: none;
+    color: white;
+}
+a:hover {
+    cursor: pointer;
+}
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/**************** Header *****************/
+header {
+    flex-direction: column;
+    height: 60vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url(../img/cinema-chairs2.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+.title {
+    margin: 0 auto;
+    padding: 5rem 0;
+    flex-direction: column;
+    align-items: center;
+}
+.title span {
+    font-size: 2rem;
+    padding: 0.9rem;
+}
+h1 {
+    color: red;
+    font-size: 5rem;
+    margin: 1rem;
+    text-transform: uppercase;
+}
+/**************** Navbar *****************/
+/* nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    padding: 1.5rem;
+} */
+
+/**************** Search bar *****************/
+.search-container {
+    width: 40em;
+    max-width: 95vw;
+    gap: 0;
+}
+.search-container input, .search-container button {
+    height: 28px;
+    font-size: 0.9rem;
+}
+.search-container input {
+    width: 75%;
+    color: black;
+    padding-left: 0.5rem;
+}
+.search-container button {
+    width: 25%;
+    background: red;
+}
+
+/**************** Main *****************/
+
+/**************** Trending *****************/
+section.popular {
+    padding: 3rem;
+}
+.popular h2 {
+    text-align: center;
+    padding-bottom: 1.5rem;
+}
+#trending {
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+#trending img {
+    width: 9.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/**************** Movie Info *****************/
+.movie-info {
+    justify-content: center;
+    gap: 3rem;
+    padding: 2rem;
+    background: rgb(11, 15, 22);
+    font-weight: 200;
+}
+#info-img {
+    align-self: center;
+}
+#info-img img {
+    width: 14rem;
+}
+#info-text {
+    flex-basis: 45%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+}
+#info-text h3 {
+    padding-bottom: 1rem;
+    font-size: 1.9rem;
+}
+.rating-cont, .year-runtime-cont {
+    font-size: 1rem;
+}
+.year-runtime-cont {
+    padding: 0.4rem 0;
+    gap: 0.9rem;
+    color: rgb(177, 181, 196);
+}
+.genre-cont {
+    gap: 1em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+.genre-cont div {
+    border: 1px solid rgb(177, 181, 196);
+    padding: 0.2rem 0.8rem;
+    border-radius: 3px;
+}
+.plot-cont {
+    padding: 2rem 1rem;
+    font-size: 1.1rem;
+}
+.plot-cont p {
+    text-align: justify;
+}
+
+/**************** Movie Recommendations *****************/
+.movie-rec {
+    padding: 3rem 5rem;
+}
+.movie-rec h2 {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+#rec-results {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+#rec-results div {
+    max-width: 9.1rem;
+}
+#rec-results img {
+    width: 8.9rem;
+}
+#rec-results h4 {
+    text-align: center;
+    padding-top: 0.5rem;
+}
+
+/**************** Footer *****************/
+footer {
+  padding: 0.5rem 1rem;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+footer a, footer a:link, footer a:visited {
+    color: #551a8b;
+}
+.credits {
+  text-align: right;
+}
+/******************************************
+/* MEDIA QUERIES
+/*******************************************/
+@media screen and (max-width: 900px) {
+    #trending img {
+        width: 8rem;
+    }
+    #info-img img {
+        width: 12rem;
+    }
+    #rec-results img {
+        width: 7.5rem;
+    }
+    .rating-cont, .year-runtime-cont {
+        font-size: 0.85rem;
+    }
+    .genre-cont {
+        font-size: 0.75rem;
+    }
+    .plot-cont {
+        font-size: 1rem;
+    }
+    #info-text h3 {
+        font-size: 1.7rem;
+    }
+    .genre-cont div {
+        text-align: center;
+        display: flex;
+    }
+    .genre-cont span {
+        align-self: center;
+    }
+  }
+  @media screen and (max-width: 650px) {
+    .title h1 {
+        margin-bottom: 4rem;
+        font-size: 4.3rem;
+    }
+    #trending img {
+        width: 6.8rem;
+    }
+    #info-img img {
+        width: 10rem;
+    }
+    #rec-results img {
+        width: 6rem;
+        margin: 0 auto;
+    }
+  }
+  @media screen and (max-width: 530px) {
+    header {
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .title h1 {
+        font-size: 3.4rem;
+        margin-bottom: 2rem;
+    }
+    .title span {
+        font-size: 1.5rem;
+        text-align: center;
+        padding-bottom: 1.2rem;
+    }
+    .search-container input, .search-container button {
+        display: block;
+        width: 85vw;
+        margin: 0 auto;
+    }
+    .search-container button {
+        text-align: center;
+    }
+    section.popular {
+        padding: 1rem 0.6rem 2rem 0.6rem;
+    }
+    #trending {
+        gap: 0.5rem;
+    }
+    #trending img {
+        width: 5.11rem;
+    }
+    section.movie-info {
+        display: block;
+        padding-bottom: 0;
+    }
+    #info-img img {
+        margin: 0 auto;
+        width: 8.5rem;
+    }
+    section.movie-rec {
+        padding: 2rem 0.6rem;
+    }
+    #rec-results {
+        gap: 1rem;
+    }
+    #rec-results img {
+        width: 5rem;
+    }
+    #rec-results h4 {
+        font-size: 0.9rem;
+    }
+    footer {
+        font-size: 0.7rem;
+    }
+  }
