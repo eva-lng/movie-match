@@ -3,7 +3,7 @@ Movie Match is a web-based application that provides users with movie recommenda
 
 **Tech used:** HTML, CSS, JavaScript,  The Movie Database API
 
-**Link to project:**
+**Link to project:** https://admirable-gecko-fe61cf.netlify.app
 
 ## Optimizations:
 planned future optimizations include:
