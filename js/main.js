@@ -9,9 +9,8 @@ function getTrend() {
   const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
 
   fetch(url)
-    .then(res => res.json()) //parse response as JSON
+    .then(res => res.json())
     .then(data => {
-      console.log(data);
       data.results.slice(0, 7).forEach(item => {
         const link = document.createElement('a');
         document.querySelector('#trending').appendChild(link);
@@ -35,31 +34,47 @@ function getID() {
     const input = document.querySelector('input').value
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${input}`
 
-    fetch(url)
-    .then(res => res.json()) //parse response as JSON
-    .then(data => {
-      //get id of the first search result
-      console.log(data.results[0].id);
-      movieID = data.results[0].id;
-      //get movie info of the searched title
-      getMovieInfo(movieID);
-      //get movie recommendations based on the title id
-      recommendMovies(movieID);
-    })
-    .catch(err => {
-      console.log(`error ${err}`);
-    });
+    if (input.length == 0) {
+      // Display error message
+      let errorMsg = document.createElement("h3");
+      errorMsg.classList.add("msg");
+      errorMsg.textContent = "No results found. Please enter a movie title";
+      document.querySelector('.search-container').appendChild(errorMsg);
+    } else {
+      fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        //get id of the first search result
+        movieID = data.results[0].id;
+        //get movie info of the searched title
+        getMovieInfo(movieID);
+        //get movie recommendations based on the title id
+        recommendMovies(movieID);
+      })
+      .catch(err => {
+        console.log(`error ${err}`);
+        // Display error message
+        let errorMsg = document.createElement("h3");
+        errorMsg.classList.add("msg");
+        errorMsg.textContent = "No results found. Please enter a valid movie title";
+        document.querySelector('.search-container').appendChild(errorMsg);
+      });
+    }
 }
 
 //get movie info based on movie id
 function getMovieInfo(id) {
+  // remove error msg
+  if (document.querySelector('.msg')) {
+    document.querySelector('.msg').remove()
+  }
+  
   document.querySelector('#movie-info').classList.remove('hidden')
   const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`;
 
   fetch(url)
-    .then(res => res.json()) //parse response as JSON
+    .then(res => res.json())
     .then(data => {
-      console.log(data);
       clearInfo();
       //------movie image------
       const img = document.createElement('img');
@@ -98,9 +113,8 @@ function recommendMovies(id) {
   const url = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${API_KEY}&language=en-US&page=1`
 
   fetch(url)
-    .then(res => res.json()) //parse response as JSON
+    .then(res => res.json())
     .then(data => {
-      console.log(data);
       clearRecs();
       document.querySelector('#movie-rec-title').innerText = 'Recommended Movies For You';
       data.results.slice(0, 16).forEach(item => {
